@@ -1,8 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 
-type Props = {
+interface Props {
   onAddCategory: (value: string) => void
-}
+};
 
 export const AddCategory = ({onAddCategory}: Props) => {
   const [inputValue, setInputValue] = useState<string>("")
@@ -19,7 +19,7 @@ export const AddCategory = ({onAddCategory}: Props) => {
   }
 
   return (
-    <form onSubmit={ handleSubmit }>
+    <form onSubmit={ handleSubmit } aria-label="form">
       <input 
         type="text" 
         placeholder="Buscar gifs"
